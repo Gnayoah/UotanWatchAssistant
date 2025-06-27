@@ -173,15 +173,15 @@ class _ButtonPageState extends State<ButtonPage> {
           actions: <Widget>[
             TextButton(
               style: ButtonStyle(
-                overlayColor: WidgetStateProperty.resolveWith<Color?>(
-                  (Set<WidgetState> states) {
-                    if (states.contains(WidgetState.pressed) || states.contains(WidgetState.hovered)) {
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.pressed) || states.contains(MaterialState.hovered)) {
                       return const Color.fromARGB(255, 237, 237, 237);
                     }
                     return null;
                   },
                 ),
-                foregroundColor: WidgetStateProperty.all<Color>(Colors.black),
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
               ),
               child: const Text('确定'),
               onPressed: () {

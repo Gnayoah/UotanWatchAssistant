@@ -195,15 +195,15 @@ class _InstallAppPageState extends State<InstallAppPage> {
           actions: <Widget>[
             TextButton(
               style: ButtonStyle(
-                overlayColor: WidgetStateProperty.resolveWith<Color?>(
-                  (Set<WidgetState> states) {
-                    if (states.contains(WidgetState.pressed) || states.contains(WidgetState.hovered)) {
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.pressed) || states.contains(MaterialState.hovered)) {
                       return const Color.fromARGB(255, 237, 237, 237); // 点击或悬浮时的背景颜色
                     }
                     return null; // 默认状态下不更改颜色
                   },
                 ),
-                foregroundColor: WidgetStateProperty.all<Color>(Colors.black), // 文本颜色
+                foregroundColor: MaterialStateProperty.all<Color>(Colors.black), // 文本颜色
               ),
               child: const Text('确定'),
               onPressed: () {
